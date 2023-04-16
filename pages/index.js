@@ -21,7 +21,7 @@ export default function Home({ languageData }) {
       <p><b>Current locale:</b> {locale}</p>
       <p><b>Default locale:</b> {defaultLocale}</p>
       <p><b>Configured locales:</b> {JSON.stringify(locales)}</p>
-
+      <Link href="/settings" locale={locale}>Settings</Link>
       <LocaleSwitcher />
     </main>
   )
