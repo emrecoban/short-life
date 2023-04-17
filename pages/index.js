@@ -16,8 +16,8 @@ export default function Home({ languageData }) {
   console.log("json'dan gelen veri => ", languageData)
 
   return (
-    <main className="flex flex-col mx-auto max-w-5xl bg-slate-100 rounded-lg text-left space-y-6 p-10">
-      <h1 className="text-4xl font-extrabold">{languageData.pageHomeTitle}</h1>
+    <main className="flex flex-col mx-auto max-w-5xl bg-slate-100 rounded-lg text-left space-y-6 p-10 font-dongle text-3xl">
+      <h1 className="text-7xl font-extrabold">{languageData.pageHomeTitle}</h1>
       <p><b>Current locale:</b> {locale}</p>
       <p><b>Default locale:</b> {defaultLocale}</p>
       <p><b>Configured locales:</b> {JSON.stringify(locales)}</p>
