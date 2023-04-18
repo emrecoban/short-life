@@ -9,6 +9,7 @@ export const theme = {
   extend: {
     fontFamily: {
       dongle: ['var(--font-dongle)', ...fontFamily.sans],
+      inter: ['var(--font-inter)', ...fontFamily.sans],
     },
   },
 }
