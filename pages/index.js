@@ -10,19 +10,12 @@ export async function getStaticProps({ locale }){
 }
 
 export default function Home({ languageData }) {
-  const router = useRouter()
-  const { locale, locales, defaultLocale } = router
-
-  console.log("json'dan gelen veri => ", languageData)
+  // Language Settings
+  const { locale, locales, defaultLocale } = useRouter()
 
   return (
-    <main className="flex flex-col mx-auto max-w-5xl bg-slate-100 rounded-lg text-left space-y-6 p-10 font-dongle text-3xl">
-      <h1 className="text-7xl font-extrabold">{languageData.pageHomeTitle}</h1>
-      <p><b>Current locale:</b> {locale}</p>
-      <p><b>Default locale:</b> {defaultLocale}</p>
-      <p><b>Configured locales:</b> {JSON.stringify(locales)}</p>
-      <Link href="/settings" locale={locale}>Settings</Link>
-      <LocaleSwitcher />
-    </main>
+    <header>
+      
+    </header>
   )
 }
