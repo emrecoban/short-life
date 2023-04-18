@@ -1,5 +1,6 @@
 import LocaleSwitcher from "@/components/LocaleSwitcher"
 import Link from "next/link"
+import React, {useState} from "react"
 import { useRouter } from 'next/router'
 import { motion } from "framer-motion"
 
@@ -15,6 +16,8 @@ export const metaData = {
 }
 
 export default function Home({ languageData }) {
+  const [selectedId, setSelectedId] = useState(null)
+
   // Language Settings
   const { locale, locales, defaultLocale } = useRouter()
 
@@ -72,17 +75,28 @@ export default function Home({ languageData }) {
           }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">Capture your life's highlights in squares with Short Life.</motion.h3>
       </header>
       <main className="flex flex-col mx-auto max-w-6xl p-5 gap-y-2">
-      <h1 className="font-inter text-lg font-light">Your life in weeks</h1>
+      <motion.h1  initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }} transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 0.4
+          }} className="font-inter text-lg font-light">Your life in weeks</motion.h1>
         <motion.div
           variants={container}
           initial="hidden"
           animate="visible"
-          className="bg-slate-300 w-full flex flex-wrap gap-1 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          className="bg-zinc-100 w-full flex flex-wrap gap-1 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
 
           <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
           <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
@@ -97,38 +111,86 @@ export default function Home({ languageData }) {
           <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
 
           <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
 
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-lime-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
 
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
 
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-emerald-200"></motion.div>
 
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
-          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-orange-200"></motion.div>
+          {}
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-teal-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-cyan-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-cyan-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-cyan-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-cyan-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-cyan-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-sky-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-indigo-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+          <motion.div variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-violet-200"></motion.div>
+
 
         </motion.div>
+        
       </main>
     </>
   )
