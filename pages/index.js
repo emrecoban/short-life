@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { motion, AnimatePresence } from "framer-motion"
 
 
+
 export async function getStaticProps({ locale }) {
   const languageData = (await import(`../lang/${locale}.js`)).default
   return {
@@ -125,13 +126,18 @@ export default function Home({ languageData }) {
              className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-red-200 absolute self-center">
               <h1 className="font-inter font-medium text-lg md:text-2xl mb-2">Week {selectedId} of life</h1>
 
-            <div className="flex flex-wrap gap-3 w-full">
-                <img className="w-2/4 aspect-video object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
-                <div className="w-2/4 aspect-video rounded-md p-3 bg-slate-200">
+            <div className="flex flex-wrap gap-2 justify-center w-full h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-red-200">
+
+                <img className="lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
+                <div className="lg:w-1/4 rounded-md p-3 bg-slate-200">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid quo eum quae quos illo earum ipsa doloribus nostrum minus libero aspernatur laborum cum, a suscipit, ratione ea totam ullam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                 </div>
-                <img className="w-2/4 aspect-video object-cover rounded-md" src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" />
-                <img className="w-2/4 aspect-video object-cover rounded-md" src="https://uploads1.bundoo.com/wp-content/uploads/2015/01/What-kind-of-child-do-you-haveTHUMB-800x500.png" />
+                <img className="lg:w-1/4 object-cover rounded-md" src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" />
+                <img className="lg:w-1/4 object-cover rounded-md" src="https://uploads1.bundoo.com/wp-content/uploads/2015/01/What-kind-of-child-do-you-haveTHUMB-800x500.png" />
+                <img className="lg:w-1/4 object-cover rounded-md" src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" />
+                <img className="lg:w-1/4 object-cover rounded-md" src="https://uploads1.bundoo.com/wp-content/uploads/2015/01/What-kind-of-child-do-you-haveTHUMB-800x500.png" />
+                <img className="lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
+              
                 
               </div>
              </motion.div>
