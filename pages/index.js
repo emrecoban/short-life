@@ -18,7 +18,14 @@ export const metaData = {
 }
 
 export default function Home({ languageData }) {
-  const [selectedId, setSelectedId] = useState(1)
+  const [selectedId, setSelectedId] = useState(null)
+
+  // Sample data
+  const kareler = []
+  for(let i=1; i<=231; i++) {
+    kareler.push(i);
+  }
+
 
   // Language Settings
   const { locale, locales, defaultLocale } = useRouter()
@@ -89,46 +96,26 @@ export default function Home({ languageData }) {
           initial="hidden"
           animate="visible"
           className="bg-zinc-100 w-full flex flex-wrap gap-1 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
-
-          <motion.div layoutId={1} onClick={() => setSelectedId(1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={2} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={3} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={4} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={5} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={6} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={7} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={8} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={9} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={10} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={11} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={12} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={13} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={14} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={15} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={16} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={17} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={18} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={19} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={20} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={21} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={22} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-          <motion.div layoutId={23} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200"></motion.div>
-
-
+          {kareler.map((_item, index)=>{
+            return (
+              <motion.div key={index} layoutId={index+1} onClick={() => setSelectedId(index+1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200 cursor-pointer hover:bg-red-400 transition-colors	hover:drop-shadow-lg"></motion.div>
+            )
+          })}
+          
           <AnimatePresence>
           {selectedId && (
             <motion.div
-            layoutId={1}
+            layoutId={selectedId}
             onClick={() => setSelectedId(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-             className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-red-200 absolute self-center">
+             className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-red-200 absolute self-center border border-red-300">
               <h1 className="font-inter font-medium text-lg md:text-2xl mb-2">Week {selectedId} of life</h1>
 
             <div className="flex flex-wrap gap-2 justify-center w-full h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-red-200">
 
-                <img className="lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
+                <img className="border-2 border-dashed border-slate-100 lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
                 <div className="lg:w-1/4 rounded-md p-3 bg-slate-200">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid quo eum quae quos illo earum ipsa doloribus nostrum minus libero aspernatur laborum cum, a suscipit, ratione ea totam ullam! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Architecto laboriosam deleniti aperiam ab veniam sint non cumque quis tempore cupiditate. Sint libero voluptas veniam at reprehenderit, veritatis harum et rerum.
                 </div>
