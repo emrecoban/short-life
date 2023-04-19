@@ -104,9 +104,10 @@ export default function Home({ languageData }) {
           
           <AnimatePresence>
           {selectedId && (
+            <>
+            <div className="top-0 left-0 absolute w-full h-full backdrop-blur-sm bg-white/30 cursor-pointer" onClick={() => setSelectedId(null)}></div>
             <motion.div
             layoutId={selectedId}
-            onClick={() => setSelectedId(null)}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -128,6 +129,7 @@ export default function Home({ languageData }) {
                 
               </div>
              </motion.div>
+            </>
           )}
         </AnimatePresence>
 
