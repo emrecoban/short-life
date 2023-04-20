@@ -100,7 +100,8 @@ export default function Home({ languageData }) {
             delay: 0.4
           }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">Capture your life's highlights in squares with Short Life.</motion.h3>
       </header>
-      <main className="flex flex-col mx-auto max-w-6xl p-5 gap-y-2">
+      <main className="flex flex-col mx-auto max-w-6xl p-5 gap-y-10 mt-4 lg:mt-7">
+      <section className="flex flex-col gap-y-2">
         <motion.div initial={{ opacity: 0 }}
           animate={{ opacity: 1 }} transition={{
             type: "spring",
@@ -123,13 +124,10 @@ export default function Home({ languageData }) {
         </motion.div>
 
         <motion.div
-
           variants={container}
           initial="hidden"
           animate="visible"
           className="bg-slate-100/20 border border-slate-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center sm:px-3 sm:py-7 lg:px-4 lg:py-9 px-3 py-6 lg:rounded-lg rounded-md drop-shadow-sm">
-
-
 
           {life.years.map((_item, index) => {
             return (
@@ -173,13 +171,15 @@ export default function Home({ languageData }) {
           </AnimatePresence>
 
         </motion.div>
-
-
-
-
-
-
-
+        </section>
+        <section id="subHeadline" className="flex flex-col mt-16 gap-y-2 relative">
+              <div className="bg-gradient-to-b from-transparent to-slate-50 absolute w-full h-full"></div>
+              <h1 className="text-center font-inter text-4xl font-bold">ShortLife is a SquareApp.</h1>
+              <h1 className="text-center font-inter text-3xl font-bold">SquareShare. SquareLife. SquareSnap.<br/>SquareView. SquareShots.<br/>SquareArt.</h1>
+        </section>
+        <section className="flex flex-col mt-8 text-center">
+          hey! it's emre!
+        </section>
       </main>
     </>
   )
