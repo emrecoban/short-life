@@ -22,7 +22,7 @@ export default function Home({ languageData }) {
 
   // Sample data
   const kareler = []
-  for(let i=1; i<=231; i++) {
+  for(let i=1; i<=66; i++) {
     kareler.push(i);
   }
 
@@ -37,7 +37,7 @@ export default function Home({ languageData }) {
       scale: 1,
       transition: {
         delayChildren: 0.02, // parent div delay time
-        staggerChildren: 0.01 // time between squares
+        staggerChildren: 0.03 // time between squares
       }
     }
   };
@@ -89,7 +89,7 @@ export default function Home({ languageData }) {
             type: "spring",
             stiffness: 100,
             delay: 0.4
-          }} className="font-inter text-lg font-light">Your life in weeks</motion.h1>
+          }} className="font-inter text-lg font-light">Your life in years</motion.h1>
         <motion.div
          
           variants={container}
@@ -98,7 +98,12 @@ export default function Home({ languageData }) {
           className="bg-zinc-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
           {kareler.map((_item, index)=>{
             return (
-              <motion.div key={index} layoutId={index+1} onClick={() => setSelectedId(index+1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200 cursor-pointer hover:bg-red-400 	hover:drop-shadow-lg"></motion.div>
+              <div class="relative inline-block">
+                <motion.div key={index} layoutId={index+1} onClick={() => setSelectedId(index+1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-sm bg-slate-200 border-slate-300 border cursor-pointer hover:bg-red-400 hover:drop-shadow-lg font-dongle text-2xl text-slate-500 flex justify-center items-center">
+                  95
+                </motion.div>
+                <span class="absolute top-0 right-0 inline-flex items-center justify-center p-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-slate-400 rounded-full"></span>
+              </div>
             )
           })}
           
@@ -112,7 +117,7 @@ export default function Home({ languageData }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
              className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-red-200 absolute self-center border border-red-300">
-              <h1 className="font-inter font-medium text-lg md:text-2xl mb-2">Week {selectedId} of life</h1>
+              <h1 className="font-inter font-medium text-lg md:text-2xl mb-2">Year {selectedId} of life</h1>
 
             <div className="flex flex-wrap gap-2 justify-center w-full h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-red-200">
 
