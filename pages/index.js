@@ -46,7 +46,7 @@ export default function Home({ languageData }) {
       },
       {
         age: 5,
-        posts: ["starting preschool", "making new friends"]
+        posts: ["starting preschool", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends", "making new friends"]
       },
       {
         age: 6,
@@ -130,7 +130,7 @@ export default function Home({ languageData }) {
       },
       {
         age: 26,
-        posts: ["planning for the future", "starting a family"]
+        posts: ["finding inner peace", "embracing change", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
       },
       {
         age: 27,
@@ -158,11 +158,11 @@ export default function Home({ languageData }) {
         },
         {
         age: 33,
-        posts: ["finding inner peace", "embracing change"]
+        posts: ["finding inner peace", "embracing change", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 34,
-        posts: ["settling down", "building a family"]
+        posts: ["finding inner peace", "embracing change", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 35,
@@ -194,11 +194,11 @@ export default function Home({ languageData }) {
         },
         {
         age: 42,
-        posts: ["finding purpose", "growing spiritually"]
+        posts: ["finding purpose", "growing spiritually", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 43,
-        posts: ["finding balance", "prioritizing self-care"]
+        posts: ["finding balance", "prioritizing self-care", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 44,
@@ -222,7 +222,7 @@ export default function Home({ languageData }) {
         },
         {
         age: 49,
-        posts: ["building financial security", "planning for retirement"]
+        posts: ["building financial security", "planning for retirement", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 50,
@@ -250,11 +250,11 @@ export default function Home({ languageData }) {
         },
         {
         age: 56,
-        posts: ["spending time with family", "giving back to community"]
+        posts: ["spending time with family", "giving back to community","spending time with family", "giving back to community",]
         },
         {
         age: 57,
-        posts: ["learning new skills", "embracing change"]
+        posts: ["learning new skills", "embracing change", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 58,
@@ -262,11 +262,11 @@ export default function Home({ languageData }) {
         },
         {
         age: 59,
-        posts: ["finding meaning in life", "building a legacy"]
+        posts: ["finding meaning in life", "building a legacy", "giving back to community", "giving back to community", "giving back to community", "giving back to community", "giving back to community"]
         },
         {
         age: 60,
-        posts: ["celebrating milestones", "reflecting on life's journey"]
+        posts: ["celebrating milestones"]
         },
         {
           age: 61,
@@ -294,6 +294,8 @@ export default function Home({ languageData }) {
           },
     ]}  
 
+    console.log("ÖRNEK HAYAT => ", life.years)
+
 
   // Language Settings
   const { locale, locales, defaultLocale } = useRouter()
@@ -317,6 +319,29 @@ export default function Home({ languageData }) {
       opacity: 1
     }
   };
+
+  const squareStyle = 'w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-sm border cursor-pointer hover:drop-shadow-lg font-dongle font-semibold text-2xl text-slate-500 flex justify-center items-center';
+
+  function squareColor(postCount){
+    if(postCount===0){
+      return "border-slate-300 bg-slate-200 hover:bg-slate-400 hover:text-slate-200 hover:cursor-default"
+    }else if(postCount>0 && postCount<3){
+      return "border-orange-300 bg-orange-200 hover:bg-orange-300"
+    }else if(postCount>2 && postCount<5){
+      return "border-orange-400 bg-orange-300 hover:bg-orange-400"
+    }else if(postCount>4 && postCount<7){
+      return "border-orange-500 bg-orange-400 hover:bg-orange-500 text-slate-200"
+    }else if(postCount>6 && postCount<9){
+      return "border-orange-600 bg-orange-500 hover:bg-orange-600 text-slate-200"
+    }else if(postCount>8 && postCount<12){
+      return "border-orange-700 bg-orange-600 hover:bg-orange-700 text-slate-200"
+    }else if(postCount>11 && postCount<14){
+      return "border-orange-800 bg-orange-700 hover:bg-orange-800 text-slate-200"
+    }else if(postCount>13 && postCount<17){
+      return "border-orange-900 bg-orange-800 hover:bg-orange-900 text-slate-200"
+    }
+    return "border-slate-300 bg-slate-200 hover:bg-red-400"
+  }
 
   return (
     <>
@@ -364,14 +389,14 @@ export default function Home({ languageData }) {
           initial="hidden"
           animate="visible"
           className="bg-zinc-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
-          {kareler.map((_item, index)=>{
+          {life.years.map((_item, index)=>{
             return (
-              <div class="relative inline-block">
-                <motion.div key={index} layoutId={index+1} onClick={() => setSelectedId(index+1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-sm bg-slate-200 border-slate-300 border cursor-pointer hover:bg-red-400 hover:drop-shadow-lg font-dongle text-2xl text-slate-500 flex justify-center items-center">
-                  95
-                </motion.div>
-                <span class="absolute top-0 right-0 inline-flex items-center justify-center p-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-slate-400 rounded-full"></span>
-              </div>
+              <motion.div key={index} layoutId={_item.age} onClick={() => _item.posts.length!=0 && setSelectedId(_item.age)} variants={item} className="relative inline-block">
+                <div className={`${squareStyle} ${squareColor(_item.posts.length)}`}>{_item.age}</div>
+                {_item.posts.length!=0 && (
+                  <span className="absolute top-0 right-0 inline-flex items-center justify-center p-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-orange-400 rounded-full"></span>
+                )}
+              </motion.div>
             )
           })}
           
