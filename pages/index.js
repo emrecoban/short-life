@@ -423,8 +423,7 @@ export default function Home({ languageData }) {
                 <img className="lg:w-1/4 object-cover rounded-md" src="https://images.unsplash.com/photo-1591871937573-74dbba515c4c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8&w=1000&q=80" />
                 <img className="lg:w-1/4 object-cover rounded-md" src="https://uploads1.bundoo.com/wp-content/uploads/2015/01/What-kind-of-child-do-you-haveTHUMB-800x500.png" />
                 <img className="lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
-              
-                
+
               </div>
              </motion.div>
             </>
@@ -432,7 +431,18 @@ export default function Home({ languageData }) {
         </AnimatePresence>
 
         </motion.div>
-        
+        <div className="flex items-center font-inter font-light text-sm">
+            <span className="mr-1">Less</span>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-slate-200 border-slate-300 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-200 border-orange-300 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-300 border-orange-400 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-400 border-orange-500 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-500 border-orange-600 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-600 border-orange-700 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-700 border-orange-800 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr"></div>
+            <span className="ml-1">More</span>
+        </div>
       </main>
     </>
   )
