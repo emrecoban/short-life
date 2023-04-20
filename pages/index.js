@@ -21,11 +21,6 @@ export default function Home({ languageData }) {
   const [selectedId, setSelectedId] = useState(null)
 
   // Sample data
-  const kareler = []
-  for(let i=1; i<=66; i++) {
-    kareler.push(i);
-  }
-
   const life = {
     years: [
       {
@@ -294,7 +289,6 @@ export default function Home({ languageData }) {
           },
     ]}  
 
-    console.log("ÖRNEK HAYAT => ", life.years)
 
 
   // Language Settings
@@ -377,18 +371,36 @@ export default function Home({ languageData }) {
           }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">Capture your life's highlights in squares with Short Life.</motion.h3>
       </header>
       <main className="flex flex-col mx-auto max-w-6xl p-5 gap-y-2">
-      <motion.h1  initial={{ opacity: 0 }}
+        <motion.div initial={{ opacity: 0 }}
           animate={{ opacity: 1 }} transition={{
             type: "spring",
             stiffness: 100,
             delay: 0.4
-          }} className="font-inter text-lg font-light">Your life in years</motion.h1>
+          }} className="flex w-full justify-between px-2">
+        <h1   className="font-inter text-lg font-light">Your life in years</h1>
+          <div className="flex items-center font-inter font-light text-sm">
+            <span className="mr-1">Less</span>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-slate-200 border-slate-300 drop-shadow-sm mr-0.5 relative z-0"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-200 border-orange-300 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-300 border-orange-400 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-400 border-orange-500 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-500 border-orange-600 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-600 border-orange-700 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-700 border-orange-800 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr"></div>
+            <span className="ml-1">More</span>
+        </div>
+        </motion.div>
+      
         <motion.div
          
           variants={container}
           initial="hidden"
           animate="visible"
-          className="bg-zinc-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
+          className="bg-slate-100/20 border border-slate-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center sm:px-3 sm:py-7 lg:px-4 lg:py-9 px-3 py-6 lg:rounded-lg rounded-md drop-shadow-sm">
+
+
+
           {life.years.map((_item, index)=>{
             return (
               <motion.div key={index} layoutId={_item.age} onClick={() => _item.posts.length!=0 && setSelectedId(_item.age)} variants={item} className="relative inline-block">
@@ -409,10 +421,10 @@ export default function Home({ languageData }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-             className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-red-200 absolute self-center border border-red-300">
+             className="p-4 w-5/6 h-auto rounded-md lg:rounded-lg drop-shadow-md bg-slate-200 border-slate-300 absolute self-center border">
               <h1 className="font-inter font-medium text-lg md:text-2xl mb-2">Year {selectedId} of life</h1>
 
-            <div className="flex flex-wrap gap-2 justify-center w-full h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-red-400 scrollbar-track-red-200">
+            <div className="flex flex-wrap gap-2 justify-center w-full h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-200">
 
                 <img className="border-2 border-dashed border-slate-100 lg:max-w-1/4 object-cover rounded-md" src="https://img.freepik.com/free-photo/shot-cute-baby-girl-looking-camera_329181-19580.jpg?w=400" />
                 <div className="lg:w-1/4 rounded-md p-3 bg-slate-200">
@@ -429,20 +441,15 @@ export default function Home({ languageData }) {
             </>
           )}
         </AnimatePresence>
-
+          
         </motion.div>
-        <div className="flex items-center font-inter font-light text-sm">
-            <span className="mr-1">Less</span>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-slate-200 border-slate-300 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-200 border-orange-300 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-300 border-orange-400 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-400 border-orange-500 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-500 border-orange-600 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-600 border-orange-700 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-700 border-orange-800 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr"></div>
-            <span className="ml-1">More</span>
-        </div>
+
+
+
+        
+
+
+        
       </main>
     </>
   )
