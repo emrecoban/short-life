@@ -95,7 +95,7 @@ export default function Home({ languageData }) {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="bg-zinc-100 w-full flex flex-wrap gap-1 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
+          className="bg-zinc-100 w-full flex flex-wrap gap-1.5 md:gap-2 lg:gap-3 justify-center lg:p-4 p-3 lg:rounded-lg rounded-md drop-shadow-sm">
           {kareler.map((_item, index)=>{
             return (
               <motion.div key={index} layoutId={index+1} onClick={() => setSelectedId(index+1)} variants={item} className="w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-md bg-red-200 cursor-pointer hover:bg-red-400 	hover:drop-shadow-lg"></motion.div>
