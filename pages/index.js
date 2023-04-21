@@ -44,28 +44,26 @@ export default function Home({ languageData }) {
     }
   };
 
-  const squareStyle = 'w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-sm border cursor-pointer hover:drop-shadow-lg font-dongle font-semibold text-2xl text-slate-500 flex justify-center items-center';
+  const squareStyle = 'w-8 h-8 md:w-9 md:h-9 lg:w-10 lg:h-10 rounded-md lg:rounded-lg drop-shadow-sm border cursor-pointer hover:drop-shadow-lg font-dongle font-semibold text-2xl flex justify-center items-center';
 
   function squareColor(postCount) {
-    if (postCount === 0) {
-      return "border-slate-300 bg-slate-200 hover:bg-slate-400 hover:text-slate-200 hover:cursor-default"
-    } else if (postCount > 0 && postCount < 3) {
-      return "border-orange-300 bg-orange-200 hover:bg-orange-300"
-    } else if (postCount > 2 && postCount < 5) {
-      return "border-orange-400 bg-orange-300 hover:bg-orange-400"
-    } else if (postCount > 4 && postCount < 7) {
-      return "border-orange-500 bg-orange-400 hover:bg-orange-500 text-slate-200"
-    } else if (postCount > 6 && postCount < 9) {
-      return "border-orange-600 bg-orange-500 hover:bg-orange-600 text-slate-200"
-    } else if (postCount > 8 && postCount < 12) {
-      return "border-orange-700 bg-orange-600 hover:bg-orange-700 text-slate-200"
-    } else if (postCount > 11 && postCount < 14) {
-      return "border-orange-800 bg-orange-700 hover:bg-orange-800 text-slate-200"
-    } else if (postCount > 13 && postCount < 17) {
-      return "border-orange-900 bg-orange-800 hover:bg-orange-900 text-slate-200"
-    }
-    return "border-slate-300 bg-slate-200 hover:bg-red-400"
+    const classList = [
+      { class: "border-slate-300 bg-slate-200 hover:bg-slate-400 hover:text-slate-200 hover:cursor-default text-slate-500", min: 0, max: 0 },
+      { class: "border-orange-300 bg-orange-200 hover:bg-orange-300 text-slate-500", min: 1, max: 2 },
+      { class: "border-orange-400 bg-orange-300 hover:bg-orange-400 text-slate-500", min: 3, max: 4 },
+      { class: "border-orange-500 bg-orange-400 hover:bg-orange-500 text-slate-200", min: 5, max: 6 },
+      { class: "border-orange-600 bg-orange-500 hover:bg-orange-600 text-slate-200", min: 7, max: 8 },
+      { class: "border-orange-700 bg-orange-600 hover:bg-orange-700 text-slate-200", min: 9, max: 11 },
+      { class: "border-orange-800 bg-orange-700 hover:bg-orange-800 text-slate-200", min: 12, max: 13 },
+      { class: "border-orange-900 bg-orange-800 hover:bg-orange-900 text-slate-100", min: 14, max: 16 },
+      { class: "border-orange-950 bg-orange-900 hover:bg-orange-950 text-slate-100", min: 17, max: Infinity }
+    ];
+  
+    const foundClass = classList.find((item) => postCount >= item.min && postCount <= item.max);
+  
+    return foundClass ? foundClass.class : "border-slate-300 bg-slate-200 hover:bg-red-400";
   }
+  
 
   return (
     <>
@@ -118,7 +116,8 @@ export default function Home({ languageData }) {
             <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-500 border-orange-600 drop-shadow-sm mr-0.5"></div>
             <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-600 border-orange-700 drop-shadow-sm mr-0.5"></div>
             <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-700 border-orange-800 drop-shadow-sm mr-0.5"></div>
-            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr-0.5"></div>
+            <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-900 border-orange-950 drop-shadow-sm"></div>
             <span className="ml-1">More</span>
           </div>
         </motion.div>
@@ -131,12 +130,17 @@ export default function Home({ languageData }) {
 
           {life.years.map((_item, index) => {
             return (
-              <motion.div key={index} layoutId={_item.age} onClick={() => _item.posts.length != 0 && setSelectedId(_item.age)} variants={item} className="relative inline-block">
-                <div className={`${squareStyle} ${squareColor(_item.posts.length)}`}>{_item.age}</div>
+              <div className="relative inline-block">
+                <motion.div key={index} layoutId={_item.age} onClick={() => _item.posts.length != 0 && setSelectedId(_item.age)} variants={item} className={`${squareStyle} ${squareColor(_item.posts.length)}`}>{_item.age}</motion.div>
                 {_item.posts.length != 0 && (
-                  <span className="absolute top-0 right-0 inline-flex items-center justify-center p-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-orange-400 rounded-full"></span>
+                  <motion.span initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }} transition={{
+            type: "spring",
+            stiffness: 100,
+            delay: 2 // (staggerChildren*squareCount)+delayChildren
+          }} className="absolute top-0 right-0 inline-flex items-center justify-center p-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-orange-400 rounded-full"></motion.span>
                 )}
-              </motion.div>
+              </div>
             )
           })}
 
