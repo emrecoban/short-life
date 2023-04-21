@@ -7,24 +7,30 @@ export default function LocaleSwitcher() {
 
   const otherLocales = (locales || []).filter(
     (locale) => locale !== activeLocale
-  )
+  ) // Only the other langs.
+
+  function converter(locale) {
+    let langText = ""
+    if (locale === "tr") { langText = "Türkçe" }
+    if (locale === "en") { langText = "English" }
+    return langText
+  }
 
   return (
     <div>
-      <p>Locale switcher:</p>
-      <ul>
+      <ul className='font-inter font-light text-sm text-gray-500'>
         {otherLocales.map((locale) => {
           const { pathname, query, asPath } = router
           return (
             <li key={locale}>
               <Link
-                className="hover:text-blue-600"
+                className="hover:text-gray-600"
                 href={{ pathname, query }}
                 as={asPath}
                 locale={locale}
                 legacyBehavior
               >
-                {locale}
+                {converter(locale)}
               </Link>
             </li>
           )
