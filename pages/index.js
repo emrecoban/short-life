@@ -116,8 +116,8 @@ export default function Home({ languageData }) {
             delay: 0.4
           }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">Capture your life's highlights in squares with Short Life.</motion.h3>
       </header>
-      <main className="flex flex-col mx-auto max-w-6xl p-5 gap-y-10 mt-4 lg:mt-7">
-        <section className="flex flex-col gap-y-2">
+      <main className="flex flex-col w-full gap-y-10 mt-4 lg:mt-7">
+        <section className="flex flex-col gap-y-2 mx-auto max-w-6xl p-5">
           <motion.div initial={{ opacity: 0 }}
             animate={{ opacity: 1 }} transition={{
               type: "spring",
@@ -196,11 +196,26 @@ export default function Home({ languageData }) {
         </section>
         <section id="subHeadline" className="flex flex-col mt-16 gap-y-2 relative">
           <div className="bg-gradient-to-b from-transparent to-slate-50 absolute w-full h-full"></div>
-          <h1 className="text-center font-inter text-4xl font-bold">ShortLife is a SquareApp.</h1>
-          <h1 className="text-center font-inter text-3xl font-bold">SquareShare. SquareLife. SquareSnap.<br />SquareView. SquareShots.<br />SquareArt.</h1>
+          <h1 className="text-center font-inter text-3xl md:text-4xl font-bold">ShortLife is a SquareApp.</h1>
+          <h1 className="text-center font-inter text-xl md:text-3xl font-medium">SquareShare. SquareLife. SquareSnap.<br />SquareView. SquareShots.<br />SquareArt.</h1>
         </section>
-        <section className="flex flex-col mt-8 text-center">
-          hey! it's emre!
+        <section className="flex flex-col mt-8 text-center w-full bg-orange-100 drop-shadow-sm p-5 skew-y-2">
+          <div className="flex flex-col mx-auto w-full p-2 max-w-6xl my-8 justify-center -skew-y-2">
+            <h1 className="font-inter font-extrabold text-2xl md:text-3xl">Your life. Your link.</h1>
+            <h3 className="font-inter font-medium text-lg md:text-xl">Short Life gives you an unique URL.</h3>
+            <button className="w-52 py-3 px-10 md:w-96 md:py-4 md:px-20 mx-auto mt-8 font-inter font-bold text-xl  bg-orange-600 border border-orange-700 text-slate-50 rounded-xl drop-shadow-sm hover:bg-orange-700 transition-colors">Sign Up</button>
+          </div>
+        </section>
+        <section className="flex flex-col mt-8 text-center w-full p-5 ">
+          <div className="flex flex-col mx-auto w-full p-2 max-w-6xl my-2 md:my-8 justify-center gap-y-2">
+            <img className="h-9 md:h-10 lg:h-11 self-center mx-1" src="img/icon.png" />
+            <p className="font-inter font-light text-sm">Crafted with love in Turkey. Built by emrecoban.</p>
+            <ul className="flex mx-auto gap-x-7">
+              <li><Link href="#" className="hover:underline">About it</Link></li>
+              <li><Link href="#" className="hover:underline">Contact</Link></li>
+              <li><Link href="#" className="hover:underline">Who I Am?</Link></li>
+            </ul>
+          </div>
         </section>
       </main>
     </>
