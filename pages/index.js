@@ -209,12 +209,13 @@ export default function Home({ languageData }) {
         <section className="flex flex-col mt-8 text-center w-full p-5 ">
           <div className="flex flex-col mx-auto w-full p-2 max-w-6xl my-2 md:my-8 justify-center gap-y-2">
             <img className="h-9 md:h-10 lg:h-11 self-center mx-1" src="img/icon.png" />
-            <p className="font-inter font-light text-sm">Crafted with love in Turkey. Built by emrecoban.</p>
-            <ul className="flex mx-auto gap-x-7">
-              <li><Link href="#" className="hover:underline">About it</Link></li>
-              <li><Link href="#" className="hover:underline">Contact</Link></li>
-              <li><Link href="#" className="hover:underline">Who I Am?</Link></li>
+            <p className="font-inter font-light text-sm text-gray-500">Crafted with love in Turkey. Built by emrecoban.</p>
+            <ul className="flex mx-auto gap-x-7 text-gray-400">
+              <li><Link href="#" className="hover:text-gray-500">About it</Link></li>
+              <li><Link href="#" className="hover:text-gray-500">Contact</Link></li>
+              <li><Link href="#" className="hover:text-gray-500">Who I Am?</Link></li>
             </ul>
+            <LocaleSwitcher />
           </div>
         </section>
       </main>
