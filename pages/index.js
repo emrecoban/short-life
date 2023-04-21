@@ -107,14 +107,14 @@ export default function Home({ languageData }) {
             duration: 0.8,
             delay: 0.2
           }}
-          className="font-inter text-4xl md:text-5xl lg:text-6xl text-center font-bold">We know <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#F66607] from-[#f0bc45]">life is short!</span><br />But life hasn't ended yet.</motion.h1>
+          className="font-inter text-4xl md:text-5xl lg:text-6xl text-center font-bold">{languageData.homeHead1} <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#F66607] from-[#f0bc45]">{languageData.homeHead1Color}</span><br />{languageData.homeHead1_1}</motion.h1>
         <motion.h3 initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
             type: "spring",
             stiffness: 100,
             delay: 0.4
-          }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">Capture your life's highlights in squares with Short Life.</motion.h3>
+          }} className="font-inter text-lg md:text-xl lg:text-2xl text-center font-extralight mt-5">{languageData.homeHead2}</motion.h3>
       </header>
       <main className="flex flex-col w-full gap-y-10 mt-4 lg:mt-7">
         <section className="flex flex-col gap-y-2 mx-auto max-w-6xl p-5">
@@ -124,9 +124,9 @@ export default function Home({ languageData }) {
               stiffness: 100,
               delay: 0.4
             }} className="flex w-full justify-between px-2">
-            <h1 className="font-inter text-lg font-light">Your life in years</h1>
+            <h1 className="font-inter text-lg font-light">{languageData.calendarSectionTitle}</h1>
             <div className="flex items-center font-inter font-light text-sm">
-              <span className="mr-1">Less</span>
+              <span className="mr-1">{languageData.less}</span>
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-slate-200 border-slate-300 drop-shadow-sm mr-0.5 relative z-0"></div>
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-200 border-orange-300 drop-shadow-sm mr-0.5"></div>
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-300 border-orange-400 drop-shadow-sm mr-0.5"></div>
@@ -136,7 +136,7 @@ export default function Home({ languageData }) {
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-700 border-orange-800 drop-shadow-sm mr-0.5"></div>
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-800 border-orange-900 drop-shadow-sm mr-0.5"></div>
               <div className="w-3 h-3 lg:w-4 lg:h-4 rounded-sm lg:rounded border bg-orange-900 border-orange-950 drop-shadow-sm"></div>
-              <span className="ml-1">More</span>
+              <span className="ml-1">{languageData.more}</span>
             </div>
           </motion.div>
 
@@ -196,24 +196,24 @@ export default function Home({ languageData }) {
         </section>
         <section id="subHeadline" className="flex flex-col mt-16 gap-y-2 relative">
           <div className="bg-gradient-to-b from-transparent to-slate-50 absolute w-full h-full"></div>
-          <h1 className="text-center font-inter text-3xl md:text-4xl font-bold">ShortLife is a SquareApp.</h1>
-          <h1 className="text-center font-inter text-xl md:text-3xl font-medium">SquareShare. SquareLife. SquareSnap.<br />SquareView. SquareShots.<br />SquareArt.</h1>
+          <h1 className="text-center font-inter text-3xl md:text-4xl font-bold">{languageData.subHeadLine}</h1>
+          <h1 className="text-center font-inter text-xl md:text-3xl font-medium">{languageData.subHL1}<br />{languageData.subHL2}<br />{languageData.subHL3}</h1>
         </section>
         <section className="flex flex-col mt-8 text-center w-full bg-orange-100 drop-shadow-sm p-5 skew-y-2">
           <div className="flex flex-col mx-auto w-full p-2 max-w-6xl my-8 justify-center -skew-y-2">
-            <h1 className="font-inter font-extrabold text-2xl md:text-3xl">Your life. Your link.</h1>
-            <h3 className="font-inter font-medium text-lg md:text-xl">Short Life gives you an unique URL.</h3>
-            <button className="w-52 py-3 px-10 md:w-96 md:py-4 md:px-20 mx-auto mt-8 font-inter font-bold text-xl  bg-orange-600 border border-orange-700 text-slate-50 rounded-xl drop-shadow-sm hover:bg-orange-700 transition-colors">Sign Up</button>
+            <h1 className="font-inter font-extrabold text-2xl md:text-3xl">{languageData.signUpSectionL1}</h1>
+            <h3 className="font-inter font-medium text-lg md:text-xl">{languageData.signUpSectionL2}</h3>
+            <button className="w-52 py-3 px-10 md:w-96 md:py-4 md:px-20 mx-auto mt-8 font-inter font-bold text-xl  bg-orange-600 border border-orange-700 text-slate-50 rounded-xl drop-shadow-sm hover:bg-orange-700 transition-colors">{languageData.signUpBtn}</button>
           </div>
         </section>
         <section className="flex flex-col mt-8 text-center w-full p-5 ">
           <div className="flex flex-col mx-auto w-full p-2 max-w-6xl my-2 md:my-8 justify-center gap-y-2">
             <img className="h-9 md:h-10 lg:h-11 self-center mx-1" src="img/icon.png" />
-            <p className="font-inter font-light text-sm text-gray-500">Crafted with love in Turkey. Built by emrecoban.</p>
+            <p className="font-inter font-light text-sm text-gray-500">{languageData.footerText}</p>
             <ul className="flex mx-auto gap-x-7 text-gray-400">
-              <li><Link href="#" className="hover:text-gray-500">About it</Link></li>
-              <li><Link href="#" className="hover:text-gray-500">Contact</Link></li>
-              <li><Link href="#" className="hover:text-gray-500">Who I Am?</Link></li>
+              <li><Link href="#" className="hover:text-gray-500">{languageData.linkAbout}</Link></li>
+              <li><Link href="#" className="hover:text-gray-500">{languageData.linkContact}</Link></li>
+              <li><Link href="#" className="hover:text-gray-500">{languageData.linkWho}</Link></li>
             </ul>
             <LocaleSwitcher />
           </div>
