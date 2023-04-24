@@ -98,6 +98,7 @@ export default function Home({ languageData }) {
           className="inline-flex items-center mx-auto">
           <img className="h-12 md:h-12 lg:h-16 self-center mx-1" src="img/icon.png" />
           <h1 className="font-dongle font-bold text-5xl md:text-5xl lg:text-6xl lg:leading-tight text-transparent bg-clip-text bg-gradient-to-r to-[#F66607] from-[#f0bc45] underline underline-offset-3 md:decoration-4 lg:decoration-8 decoration-[#DBF0E0]">Short Life</h1>
+          <h1 className="text-slate-400 text-sm ml-2">alpha</h1>
         </motion.div>
         <motion.h1
           initial={{ opacity: 0 }}
@@ -107,7 +108,7 @@ export default function Home({ languageData }) {
             duration: 0.8,
             delay: 0.2
           }}
-          className="font-inter text-4xl md:text-5xl lg:text-6xl text-center font-bold">{languageData.homeHead1} <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#F66607] from-[#f0bc45]">{languageData.homeHead1Color}</span><br />{languageData.homeHead1_1}</motion.h1>
+          className="font-inter text-4xl md:text-5xl lg:text-6xl text-center font-bold">{languageData.homeHead1}&nbsp;<span className="text-transparent bg-clip-text bg-gradient-to-r to-[#F66607] from-[#f0bc45]">{languageData.homeHead1Color}</span><br />{languageData.homeHead1_1}</motion.h1>
         <motion.h3 initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -148,8 +149,8 @@ export default function Home({ languageData }) {
 
             {life.years.map((_item, index) => {
               return (
-                <div className="relative inline-block">
-                  <motion.div key={index} layoutId={_item.age} onClick={() => _item.posts.length != 0 && setSelectedId(_item.age)} variants={item} className={`${squareStyle} ${squareColor(_item.posts.length)}`}>{_item.age}</motion.div>
+                <div key={index} className="relative inline-block">
+                  <motion.div layoutId={_item.age} onClick={() => _item.posts.length != 0 && setSelectedId(_item.age)} variants={item} className={`${squareStyle} ${squareColor(_item.posts.length)}`}>{_item.age}</motion.div>
                   {_item.posts.length != 0 && (
                     <motion.span initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }} transition={{
